@@ -2956,10 +2956,10 @@ export const en: Dict = {
   'fl.nameDoublet': 'Achromat f = {f} mm F/{n}',
   'fl.nextOptimise': 'Next: optimise. Variables and a merit function are ready.',
   // optimisation wizard
-  'ow.title': 'Optimisation wizard',
+  'ow.title': 'Optimization wizard',
   'ow.short': 'Wizard',
   'ow.hint': 'Set up the variables and the merit function from a few choices',
-  'ow.undo': 'Optimisation wizard',
+  'ow.undo': 'Optimization wizard',
   'ow.change': 'What may change',
   'ow.radii': 'Radii',
   'ow.keepPlane': 'Keep the {n} plane surface(s) plane',

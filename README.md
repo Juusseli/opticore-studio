@@ -76,8 +76,9 @@ default browser) and works offline. Your projects are kept on your computer; use
 *Export* for `.opticore` backup files. Uninstall it from *Settings → Apps* on
 Windows, or delete the AppImage on Linux. On macOS, run it from source (below).
 
-Every release lists the SHA-256 sums of its files. The Windows files are signed as
-described in the [code signing policy](docs/CODE_SIGNING.md).
+Every release lists the SHA-256 sums of its files. Windows releases: free code signing
+provided by SignPath.io, certificate by SignPath Foundation
+([code signing policy](docs/CODE_SIGNING.md)). Version 0.1.0 is not yet signed.
 
 ## Run from source
 

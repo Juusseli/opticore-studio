@@ -576,8 +576,8 @@ Every empty state says why and offers the next step:
   error shows the engine message, a hint and *Try again*; with live update
   off, *Compute now*.
 * **Merit function** empty: *Add RMS spot size*. **Optimization** without
-  variables: *Optimisation wizard…*, the Lens Data Editor and the Merit
-  Function tab. **Sidebar**: no variables → *Optimisation wizard…*; no sources →
+  variables: *Optimization wizard…*, the Lens Data Editor and the Merit
+  Function tab. **Sidebar**: no variables → *Optimization wizard…*; no sources →
   *Open Sources · Detectors*; no revisions → *Save now*.
 * `Empty` centres its content with `m-auto`, so tall content scrolls instead
   of being cut off at the top.
