@@ -118,6 +118,7 @@ exe = EXE(
     console=not WINDOWS,  # Windows: a windowed program (the app window is the browser); the log is in %LOCALAPPDATA%
     icon=str(ROOT / "packaging" / "assets" / "opticore-studio.ico"),
     version=version_info,
+    strip=not WINDOWS,  # Linux wheels ship their libraries with symbol tables (libvtkCommonCore alone is 150 MB)
     upx=False,
 )
-coll = COLLECT(exe, a.binaries, a.datas, name=NAME, upx=False)
+coll = COLLECT(exe, a.binaries, a.datas, name=NAME, strip=not WINDOWS, upx=False)

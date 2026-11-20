@@ -1910,9 +1910,10 @@ install with one click, and the Windows packages must be signed.
 * `tests/test_desktop.py`.
 
 **Trade-offs:**
-* Size: the Windows installer is 88 MB (the installed folder 444 MB). The Linux
-  folder is 925 MB and the AppImage 169 MB. On Linux the VTK
-  Python modules are included as well; trimming them is possible later.
+* Size: the Windows installer is 88 MB (the installed folder 444 MB). On Linux
+  the build strips the symbol tables of the bundled libraries; the folder is
+  still about 790 MB and the AppImage about 155 MB, almost all of it Open CASCADE
+  and the VTK libraries that it links.
 * Windows files are unsigned until SignPath approves the project; until then
   Windows shows "Unknown publisher".
 * The library belongs to `http://127.0.0.1:47321`. If another program holds the
