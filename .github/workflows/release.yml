@@ -87,7 +87,7 @@ jobs:
         run: |
           $p = Start-Process "packaging\dist\OptiCore Studio\OptiCore Studio.exe" -ArgumentList '--self-test' -Wait -PassThru
           Get-Content "$env:LOCALAPPDATA\OptiCore Studio\opticore.log" | Select-String 'self-test'
-          if ($p.ExitCode -ne 0) { exit 1 }
+          if ($p.ExitCode -ne 0) { Get-Content "$env:LOCALAPPDATA\OptiCore Studio\opticore.log" -Tail 60; exit 1 }
 
       - name: Upload the program for signing
         if: env.SIGN == 'true'
@@ -191,7 +191,7 @@ jobs:
       - name: Program folder (PyInstaller)
         run: python -m PyInstaller packaging/opticore-studio.spec --noconfirm --distpath packaging/dist --workpath packaging/build/pyinstaller
       - name: Self-test of the program
-        run: packaging/dist/opticore-studio/opticore-studio --self-test
+        run: packaging/dist/opticore-studio/opticore-studio --self-test || { tail -60 ~/.local/state/opticore-studio/opticore.log; exit 1; }
       - name: AppImage
         run: |
           curl -sSL -o "$RUNNER_TEMP/appimagetool" https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
@@ -200,7 +200,7 @@ jobs:
       - name: Self-test of the AppImage
         run: |
           chmod +x "packaging/dist/OptiCore-Studio-$VERSION-x86_64.AppImage"
-          "packaging/dist/OptiCore-Studio-$VERSION-x86_64.AppImage" --self-test
+          "packaging/dist/OptiCore-Studio-$VERSION-x86_64.AppImage" --self-test || { tail -60 ~/.local/state/opticore-studio/opticore.log; exit 1; }
       - uses: actions/upload-artifact@v7
         with:
           name: linux-appimage

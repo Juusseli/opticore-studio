@@ -185,10 +185,10 @@ def _setup_logging() -> Path:
     except OSError:
         pass
     stream = open(path, "a", encoding="utf-8", buffering=1)  # noqa: SIM115 (kept open for the process lifetime)
-    # a windowed program has no console: route print and uvicorn's output to the log
-    if sys.stdout is None or getattr(sys, "frozen", False):
+    # a windowed program has no console: route print and errors to the log (with a console, errors stay visible there)
+    if sys.stdout is None:
         sys.stdout = stream
-    if sys.stderr is None or getattr(sys, "frozen", False):
+    if sys.stderr is None:
         sys.stderr = stream
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s", stream=stream, force=True)
     return path

@@ -1911,9 +1911,10 @@ install with one click, and the Windows packages must be signed.
 
 **Trade-offs:**
 * Size: the Windows installer is 88 MB (the installed folder 444 MB). On Linux
-  the build strips the symbol tables of the bundled libraries; the folder is
-  still about 790 MB and the AppImage about 155 MB, almost all of it Open CASCADE
-  and the VTK libraries that it links.
+  the folder is about 925 MB and the AppImage about 185 MB, almost all of it Open
+  CASCADE and the VTK libraries that it links. Stripping their symbol tables saved
+  14 MB but made the build fail its self-test on Ubuntu 22.04, so they are shipped
+  as built.
 * Windows files are unsigned until SignPath approves the project; until then
   Windows shows "Unknown publisher".
 * The library belongs to `http://127.0.0.1:47321`. If another program holds the
