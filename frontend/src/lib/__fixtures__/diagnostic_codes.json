@@ -1,0 +1,203 @@
+{
+  "ASPHERE_IGNORED": [
+    "warning"
+  ],
+  "BICONIC_PARAXIAL": [
+    "info"
+  ],
+  "BIREFRINGENT": [
+    "info"
+  ],
+  "BIREFRINGENT_COATING": [
+    "warning"
+  ],
+  "BIREFRINGENT_SPACE": [
+    "error"
+  ],
+  "BIREFRINGENT_SURFACE": [
+    "error"
+  ],
+  "CB_BEFORE_STOP": [
+    "warning"
+  ],
+  "CB_MATERIAL_IGNORED": [
+    "info"
+  ],
+  "COATING_IGNORED": [
+    "info",
+    "warning"
+  ],
+  "COATING_MATERIAL": [
+    "error"
+  ],
+  "COATING_NAME": [
+    "error"
+  ],
+  "COATING_RANGE": [
+    "warning"
+  ],
+  "COATING_SUBSTRATE_IGNORED": [
+    "info"
+  ],
+  "CONFIG_INVALID": [
+    "error"
+  ],
+  "DOE_ACTIVE": [
+    "info"
+  ],
+  "DOE_IGNORED": [
+    "info"
+  ],
+  "ENVIRONMENT": [
+    "info"
+  ],
+  "FIELD_AFOCAL": [
+    "error"
+  ],
+  "FIELD_SCALE": [
+    "error"
+  ],
+  "FIELD_UNREACHABLE": [
+    "error"
+  ],
+  "GRATING_PARAXIAL": [
+    "info"
+  ],
+  "IDEAL_DOE_IGNORED": [
+    "warning"
+  ],
+  "IDEAL_LENS": [
+    "info"
+  ],
+  "IDEAL_MEDIA": [
+    "error"
+  ],
+  "IDEAL_SHAPE_IGNORED": [
+    "info"
+  ],
+  "JONES_CRYSTAL": [
+    "error"
+  ],
+  "JONES_IGNORED": [
+    "info"
+  ],
+  "MIRROR_COATING": [
+    "info"
+  ],
+  "MOUNT_COLLISION": [
+    "warning"
+  ],
+  "MOUNT_OVERCONSTRAINED": [
+    "warning"
+  ],
+  "MOUNT_UNSUPPORTED": [
+    "warning"
+  ],
+  "NEGATIVE_EDGE_THICKNESS": [
+    "warning"
+  ],
+  "NONPOSITIVE_GLASS_THICKNESS": [
+    "error"
+  ],
+  "NON_AXIAL": [
+    "info"
+  ],
+  "OBSCURATION": [
+    "info"
+  ],
+  "OBSCURATION_IGNORED": [
+    "info"
+  ],
+  "ODD_ASPHERE_CONE": [
+    "warning"
+  ],
+  "ODD_ASPHERE_PARAXIAL": [
+    "info"
+  ],
+  "PARAXIAL_AIMING": [
+    "info",
+    "warning"
+  ],
+  "PARAXIAL_FAILED": [
+    "warning"
+  ],
+  "POLARIZING_ELEMENT": [
+    "info"
+  ],
+  "QBFS_CONIC_IGNORED": [
+    "warning"
+  ],
+  "Q_EXTRAPOLATED": [
+    "warning"
+  ],
+  "RAY_FAILED": [
+    "warning"
+  ],
+  "SD_EXCEEDS_SURFACE": [
+    "error"
+  ],
+  "SOLVE_ACTIVE": [
+    "info"
+  ],
+  "SOLVE_FAILED": [
+    "error",
+    "warning"
+  ],
+  "SOLVE_INVALID": [
+    "error"
+  ],
+  "SOLVE_NOT_CONVERGED": [
+    "warning"
+  ],
+  "TELECENTRIC": [
+    "info"
+  ],
+  "TELECENTRIC_EP": [
+    "error"
+  ],
+  "TELECENTRIC_STOP": [
+    "warning"
+  ],
+  "THERMAL_NO_CTE": [
+    "warning"
+  ],
+  "THERMAL_NO_DNDT": [
+    "warning"
+  ],
+  "THERMAL_RANGE": [
+    "warning"
+  ],
+  "TRANSMITTANCE_EXTRAPOLATED": [
+    "warning"
+  ],
+  "UNKNOWN_COATING": [
+    "error"
+  ],
+  "UNKNOWN_MATERIAL": [
+    "error"
+  ],
+  "WAVELENGTH_EXTRAPOLATED": [
+    "warning"
+  ],
+  "XY_PARAXIAL": [
+    "info"
+  ],
+  "XY_TILT": [
+    "warning"
+  ],
+  "ZERNIKE_EXTRAPOLATED": [
+    "warning"
+  ],
+  "ZERNIKE_IGNORED": [
+    "warning"
+  ],
+  "ZERNIKE_PARAXIAL": [
+    "info"
+  ],
+  "ZERNIKE_TILT": [
+    "warning"
+  ],
+  "ZERO_APERTURE": [
+    "warning"
+  ]
+}

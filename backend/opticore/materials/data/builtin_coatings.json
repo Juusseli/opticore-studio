@@ -1,0 +1,3567 @@
+{
+ "generator": "opticore.tools.builtin_coatings",
+ "coatings": [
+  {
+   "name": "MGF2_QW550",
+   "category": "Antireflection",
+   "description": "Single quarter-wave MgF₂ film at 550 nm: R ≈ 1.3 % on N-BK7, the classic single-layer AR",
+   "design_nm": 550,
+   "band_nm": null,
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.518522,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.38373,
+     "thickness_nm": 99.36912419843212
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 550,
+     "lambda_max_nm": 550,
+     "value": 0.014,
+     "kind": "<=",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "name": "VCOAT_355",
+   "category": "Antireflection",
+   "description": "V-coat for 355 nm: MgF₂ 82.1 nm over Ta₂O₅ 8.5 nm (not quarter waves), zero reflectance at the laser line on N-BK7",
+   "design_nm": 355.0,
+   "band_nm": null,
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.538155,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.393465,
+     "thickness_nm": 82.09703823514106
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.308083,
+     "thickness_nm": 8.483907677612988
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 355.0,
+     "lambda_max_nm": 355.0,
+     "value": 1e-08,
+     "kind": "<=",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "name": "VCOAT_532",
+   "category": "Antireflection",
+   "description": "V-coat for 532 nm: MgF₂ 123.1 nm over Ta₂O₅ 15.4 nm (not quarter waves), zero reflectance at the laser line on N-BK7",
+   "design_nm": 532.0,
+   "band_nm": null,
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.519473,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.38421,
+     "thickness_nm": 123.06929333400852
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.16353,
+     "thickness_nm": 15.40060174975624
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 532.0,
+     "lambda_max_nm": 532.0,
+     "value": 1e-08,
+     "kind": "<=",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "name": "VCOAT_550",
+   "category": "Antireflection",
+   "description": "V-coat for 550 nm: MgF₂ 127.2 nm over Ta₂O₅ 16.1 nm (not quarter waves), zero reflectance at the laser line on N-BK7",
+   "design_nm": 550.0,
+   "band_nm": null,
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.518522,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.38373,
+     "thickness_nm": 127.23718880656038
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.157267,
+     "thickness_nm": 16.060959237682248
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 550.0,
+     "lambda_max_nm": 550.0,
+     "value": 1e-08,
+     "kind": "<=",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "name": "VCOAT_633",
+   "category": "Antireflection",
+   "description": "V-coat for 633 nm: MgF₂ 146.5 nm over Ta₂O₅ 19.0 nm (not quarter waves), zero reflectance at the laser line on N-BK7",
+   "design_nm": 633.0,
+   "band_nm": null,
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.515082,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.381988,
+     "thickness_nm": 146.4620077658066
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.135721,
+     "thickness_nm": 19.048939421184958
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 633.0,
+     "lambda_max_nm": 633.0,
+     "value": 1e-08,
+     "kind": "<=",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "name": "VCOAT_1064",
+   "category": "Antireflection",
+   "description": "V-coat for 1064 nm: MgF₂ 246.6 nm over Ta₂O₅ 33.7 nm (not quarter waves), zero reflectance at the laser line on N-BK7",
+   "design_nm": 1064.0,
+   "band_nm": null,
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.506635,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.377759,
+     "thickness_nm": 246.5784067565265
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.096236,
+     "thickness_nm": 33.72790994941889
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 1064.0,
+     "lambda_max_nm": 1064.0,
+     "value": 1e-08,
+     "kind": "<=",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "name": "VCOAT_1550",
+   "category": "Antireflection",
+   "description": "V-coat for 1550 nm: MgF₂ 360.4 nm over Ta₂O₅ 49.3 nm (not quarter waves), zero reflectance at the laser line on N-BK7",
+   "design_nm": 1550.0,
+   "band_nm": null,
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.500652,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.374616,
+     "thickness_nm": 360.3656992750576
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.085552,
+     "thickness_nm": 49.339704194625725
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 1550.0,
+     "lambda_max_nm": 1550.0,
+     "value": 1e-08,
+     "kind": "<=",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "name": "BBAR_VIS",
+   "category": "Antireflection",
+   "description": "Broadband antireflection for the visible (420–680 nm), 6 layers Ta₂O₅ / MgF₂: R < 0.6 % across the band",
+   "design_nm": 534.4155686354954,
+   "band_nm": [
+    420.0,
+    680.0
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.51934,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.384143,
+     "thickness_nm": 98.082058193209
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.162646,
+     "thickness_nm": 45.431493484327866
+    },
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.384143,
+     "thickness_nm": 8.16441997191195
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.162646,
+     "thickness_nm": 68.10943321834922
+    },
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.384143,
+     "thickness_nm": 31.835817389344456
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.162646,
+     "thickness_nm": 16.077539438157515
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 420.0,
+     "lambda_max_nm": 680.0,
+     "value": 0.006,
+     "kind": "<=",
+     "points": 61
+    }
+   ]
+  },
+  {
+   "name": "BBAR_NIR",
+   "category": "Antireflection",
+   "description": "Broadband antireflection for the near infrared (650–1050 nm), 6 layers Ta₂O₅ / MgF₂: R < 0.6 % across the band",
+   "design_nm": 826.1355820929153,
+   "band_nm": [
+    650.0,
+    1050.0
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.510274,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.379562,
+     "thickness_nm": 150.76814769962786
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.110003,
+     "thickness_nm": 78.59689756089017
+    },
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.379562,
+     "thickness_nm": 8.113082167096106
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.110003,
+     "thickness_nm": 111.08082919141503
+    },
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.379562,
+     "thickness_nm": 50.62708470874921
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.110003,
+     "thickness_nm": 24.141752444239668
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 650.0,
+     "lambda_max_nm": 1050.0,
+     "value": 0.006,
+     "kind": "<=",
+     "points": 61
+    }
+   ]
+  },
+  {
+   "name": "BBAR_SWIR",
+   "category": "Antireflection",
+   "description": "Broadband antireflection for the short-wave infrared (1000–1650 nm), 6 layers Ta₂O₅ / MgF₂: R < 0.6 % across the band",
+   "design_nm": 1284.523257866513,
+   "band_nm": [
+    1000.0,
+    1650.0
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.50389,
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.376382,
+     "thickness_nm": 233.4020411036665
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.089856,
+     "thickness_nm": 117.68293257201321
+    },
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.376382,
+     "thickness_nm": 9.181893044874938
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.089856,
+     "thickness_nm": 187.5171324329883
+    },
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.376382,
+     "thickness_nm": 77.81424559995213
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.089856,
+     "thickness_nm": 37.7225379479287
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 1000.0,
+     "lambda_max_nm": 1650.0,
+     "value": 0.006,
+     "kind": "<=",
+     "points": 61
+    }
+   ]
+  },
+  {
+   "name": "HR_532",
+   "category": "Mirrors",
+   "description": "Dielectric high reflector at 532 nm, normal incidence: (HL)^12 H quarter waves TiO₂ / SiO₂, R > 99.9 %",
+   "design_nm": 532.0,
+   "band_nm": [
+    516.04,
+    547.96
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.519473,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 516.04,
+     "lambda_max_nm": 547.96,
+     "value": 0.999,
+     "kind": ">=",
+     "points": 21
+    }
+   ]
+  },
+  {
+   "name": "HR_633",
+   "category": "Mirrors",
+   "description": "Dielectric high reflector at 633 nm, normal incidence: (HL)^12 H quarter waves TiO₂ / SiO₂, R > 99.9 %",
+   "design_nm": 633.0,
+   "band_nm": [
+    614.01,
+    651.99
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.515082,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.472106,
+     "thickness_nm": 107.49905647826122
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.304458,
+     "thickness_nm": 68.67123557429981
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 614.01,
+     "lambda_max_nm": 651.99,
+     "value": 0.999,
+     "kind": ">=",
+     "points": 21
+    }
+   ]
+  },
+  {
+   "name": "HR_1064",
+   "category": "Mirrors",
+   "description": "Dielectric high reflector at 1064 nm, normal incidence: (HL)^12 H quarter waves TiO₂ / SiO₂, R > 99.9 %",
+   "design_nm": 1064.0,
+   "band_nm": [
+    1032.08,
+    1095.92
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.506635,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 181.3100505633447
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 119.25274263407441
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 1032.08,
+     "lambda_max_nm": 1095.92,
+     "value": 0.999,
+     "kind": ">=",
+     "points": 21
+    }
+   ]
+  },
+  {
+   "name": "HR_1550",
+   "category": "Mirrors",
+   "description": "Dielectric high reflector at 1550 nm, normal incidence: (HL)^12 H quarter waves TiO₂ / SiO₂, R > 99.9 %",
+   "design_nm": 1550.0,
+   "band_nm": [
+    1503.5,
+    1596.5
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.500652,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.465664,
+     "thickness_nm": 264.385200962278
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.20581,
+     "thickness_nm": 175.67244183110208
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 1503.5,
+     "lambda_max_nm": 1596.5,
+     "value": 0.999,
+     "kind": ">=",
+     "points": 21
+    }
+   ]
+  },
+  {
+   "name": "HR_1064_45",
+   "category": "Mirrors",
+   "description": "Dielectric high reflector at 1064 nm for 45° (both polarisations): (HL)^14 H TiO₂ / SiO₂ quarter waves at 45°",
+   "design_nm": 1064.0,
+   "band_nm": [
+    1040,
+    1090
+   ],
+   "angle_deg": 45.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.506635,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.4671,
+     "thickness_nm": 206.93135534248887
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.230557,
+     "thickness_nm": 125.73799497748244
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "polarization": "s",
+     "angle_deg": 45.0,
+     "lambda_min_nm": 1040,
+     "lambda_max_nm": 1090,
+     "value": 0.999,
+     "kind": ">=",
+     "points": 21
+    },
+    {
+     "quantity": "R",
+     "polarization": "p",
+     "angle_deg": 45.0,
+     "lambda_min_nm": 1050,
+     "lambda_max_nm": 1080,
+     "value": 0.995,
+     "kind": ">=",
+     "points": 11
+    }
+   ]
+  },
+  {
+   "name": "AL_PROTECTED",
+   "category": "Mirrors",
+   "description": "Protected aluminium: 100 nm Al under a half-wave SiO₂ overcoat at 550 nm (absentee there); R ≥ 85 % from 420 to 700 nm",
+   "design_nm": 550.0,
+   "band_nm": [
+    400,
+    1000
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.518522,
+   "mirror_substrate": [
+    1.518522,
+    0.0
+   ],
+   "layers": [
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 186.48460867933147
+    },
+    {
+     "material_label": "Al",
+     "material": "AL",
+     "index": 1.011448,
+     "thickness_nm": 100.0
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 420,
+     "lambda_max_nm": 700,
+     "value": 0.85,
+     "kind": ">=",
+     "points": 57
+    }
+   ]
+  },
+  {
+   "name": "AL_ENHANCED",
+   "category": "Mirrors",
+   "description": "Enhanced aluminium: 100 nm Al with (L H)² quarter waves of SiO₂ / TiO₂ at 550 nm; R ≥ 95 % from 480 to 620 nm",
+   "design_nm": 550.0,
+   "band_nm": [
+    400,
+    800
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.518522,
+   "mirror_substrate": [
+    1.518522,
+    0.0
+   ],
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 58.597481973295906
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 93.24230433966574
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 58.597481973295906
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 93.24230433966574
+    },
+    {
+     "material_label": "Al",
+     "material": "AL",
+     "index": 1.011448,
+     "thickness_nm": 100.0
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 480,
+     "lambda_max_nm": 620,
+     "value": 0.95,
+     "kind": ">=",
+     "points": 29
+    }
+   ]
+  },
+  {
+   "name": "AL_UV",
+   "category": "Mirrors",
+   "description": "UV-enhanced aluminium: 100 nm Al with 25 nm MgF₂ (the classic UV overcoat); R ≥ 85 % from 200 to 400 nm",
+   "design_nm": 300.0,
+   "band_nm": [
+    180,
+    800
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.55277,
+   "mirror_substrate": [
+    1.55277,
+    0.0
+   ],
+   "layers": [
+    {
+     "material_label": "MgF₂",
+     "material": "MGF2_FILM",
+     "index": 1.400409,
+     "thickness_nm": 25.0
+    },
+    {
+     "material_label": "Al",
+     "material": "AL",
+     "index": 0.261992,
+     "thickness_nm": 100.0
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 200,
+     "lambda_max_nm": 400,
+     "value": 0.85,
+     "kind": ">=",
+     "points": 41
+    }
+   ]
+  },
+  {
+   "name": "AG_PROTECTED",
+   "category": "Mirrors",
+   "description": "Protected silver: 150 nm Ag under 119 nm Al₂O₃; R ≥ 95 % from 450 to 1900 nm (Ag data end at 1.94 µm)",
+   "design_nm": 900.0,
+   "band_nm": [
+    400,
+    1937
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.508997,
+   "mirror_substrate": [
+    1.508997,
+    0.0
+   ],
+   "layers": [
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.643597,
+     "thickness_nm": 119.0
+    },
+    {
+     "material_label": "Ag",
+     "material": "AG",
+     "index": 0.04,
+     "thickness_nm": 150.0
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 450,
+     "lambda_max_nm": 1900,
+     "value": 0.95,
+     "kind": ">=",
+     "points": 59
+    }
+   ]
+  },
+  {
+   "name": "AU_PROTECTED",
+   "category": "Mirrors",
+   "description": "Protected gold: 150 nm Au under 40 nm SiO₂; R ≥ 95 % from 700 to 1900 nm (Au data end at 1.94 µm)",
+   "design_nm": 1200.0,
+   "band_nm": [
+    550,
+    1937
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.504917,
+   "mirror_substrate": [
+    1.504917,
+    0.0
+   ],
+   "layers": [
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.466519,
+     "thickness_nm": 40.0
+    },
+    {
+     "material_label": "Au",
+     "material": "AU",
+     "index": 0.341027,
+     "thickness_nm": 150.0
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 700,
+     "lambda_max_nm": 1900,
+     "value": 0.95,
+     "kind": ">=",
+     "points": 49
+    }
+   ]
+  },
+  {
+   "name": "HOT_MIRROR",
+   "category": "Filters",
+   "description": "Hot mirror (0°): transmits the visible (420–650 nm) and reflects the near infrared (750–1100 nm); TiO₂ / SiO₂",
+   "design_nm": 700.0,
+   "band_nm": [
+    420,
+    1100
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.513064,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 9.212250488594206
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 212.51777592231704
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 98.69430875744719
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 136.9881079498032
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 85.63120594685384
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 138.55383859178772
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 87.10147077466249
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 135.16628081428934
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 84.83902491283345
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 135.71647703030254
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 84.70764862774882
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 144.3426667371995
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 89.30436898293497
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 153.2925361840914
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 99.66954993500578
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 177.45853954208818
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 114.45192466419199
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 183.40412497771916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 113.59708964191593
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 171.27639389352217
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 106.11056669728879
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 181.8964744837538
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 116.38465258024122
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 187.87658986634293
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 120.09092746382302
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 186.57616567313235
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 115.39152320858553
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 214.11950875436267
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 9.245137470714969
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "T",
+     "lambda_min_nm": 420,
+     "lambda_max_nm": 650,
+     "value": 0.93,
+     "kind": ">=",
+     "points": 47
+    },
+    {
+     "quantity": "T",
+     "lambda_min_nm": 750,
+     "lambda_max_nm": 1100,
+     "value": 0.03,
+     "kind": "<=",
+     "points": 71
+    }
+   ]
+  },
+  {
+   "name": "COLD_MIRROR",
+   "category": "Filters",
+   "description": "Cold mirror (0°): reflects the visible (430–640 nm) and transmits the near infrared (760–1100 nm); TiO₂ / SiO₂",
+   "design_nm": 700.0,
+   "band_nm": [
+    430,
+    1100
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.513064,
+   "layers": [
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 96.92883789071581
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 32.39890916435854
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 47.607868283023365
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 93.46211568066416
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 129.17019734184535
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 62.34596528839601
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 70.07386033822777
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 90.74287356798979
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 106.33413033559633
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 58.27143277775802
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 99.21629496810525
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 79.5757608588783
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 106.49868916988167
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 62.44272010188895
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 84.63941298607261
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 57.216192551050554
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 157.98778828228353
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 39.19437238886137
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 89.96040012027781
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 51.927488952451434
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 87.89721986450236
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 49.0695585652685
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 74.81738410311311
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 155.28008969178325
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 77.89680942733216
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 49.62087692647351
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 84.95536334618438
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.282724,
+     "thickness_nm": 48.3660448935404
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.470686,
+     "thickness_nm": 130.14808623753927
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 430,
+     "lambda_max_nm": 640,
+     "value": 0.95,
+     "kind": ">=",
+     "points": 43
+    },
+    {
+     "quantity": "T",
+     "lambda_min_nm": 760,
+     "lambda_max_nm": 1100,
+     "value": 0.85,
+     "kind": ">=",
+     "points": 69
+    }
+   ]
+  },
+  {
+   "name": "LP_550",
+   "category": "Filters",
+   "description": "Long-pass edge filter at 550 nm (0°), TiO₂ / SiO₂: blocks below 1 % and passes above 93 % 25 nm from the edge",
+   "design_nm": 550.0,
+   "band_nm": [
+    400,
+    800
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.518522,
+   "layers": [
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 191.94743477786798
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 32.59334932929783
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 70.86786890971734
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 51.13730193073869
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 62.939198260578
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 43.663241889986075
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 67.38840362289227
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 34.29196078296089
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 65.30875915812577
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 41.781697424377455
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 78.84344049202213
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 48.938482968916745
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 79.34876054889428
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 52.94010566426793
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 77.88576304996238
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 51.82713775672236
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 81.4769974658785
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 52.111499734472986
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 79.86954126093305
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 52.926840450936176
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 86.36759113302975
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 46.29145245773696
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 82.94348431603127
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 55.372115810732076
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 80.66855358889293
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 44.14889115077313
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 98.07023969472894
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 51.07449158075187
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 73.16121815432977
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 48.04995937831487
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 87.08464693458505
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 30.536461939790073
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 294.1136184088906
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "T",
+     "lambda_min_nm": 450,
+     "lambda_max_nm": 525,
+     "value": 0.01,
+     "kind": "<=",
+     "points": 31
+    },
+    {
+     "quantity": "T",
+     "lambda_min_nm": 575,
+     "lambda_max_nm": 800,
+     "value": 0.93,
+     "kind": ">=",
+     "points": 46
+    }
+   ]
+  },
+  {
+   "name": "SP_550",
+   "category": "Filters",
+   "description": "Short-pass edge filter at 550 nm (0°), TiO₂ / SiO₂: blocks below 1 % and passes above 93 % 25 nm from the edge",
+   "design_nm": 550.0,
+   "band_nm": [
+    400,
+    800
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.518522,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 9.511161773733447
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 162.69594124281178
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 71.2350501521685
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 101.52161302653408
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 72.74420772956262
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 96.94263845710726
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 66.19182011985579
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 106.54617774452862
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 65.24128353553067
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 99.69933328429985
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 63.99424531100213
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 120.55226780368105
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 46.73775167113739
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 122.20948748270139
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 64.65665270019731
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 99.06398370851622
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.73321876127186
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 111.87103930166131
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 59.686427626639464
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 124.62540109442882
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 59.645274896640245
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 119.7484204749238
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 64.15464268801695
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 114.59901837458196
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 65.92722811871668
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 105.46789500524368
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 74.31976338626521
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 86.72481581028778
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 77.4511926637451
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 98.2423266078617
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 77.60260761787107
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 152.40000439103986
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 9.547345410593909
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "T",
+     "lambda_min_nm": 400,
+     "lambda_max_nm": 525,
+     "value": 0.93,
+     "kind": ">=",
+     "points": 26
+    },
+    {
+     "quantity": "T",
+     "lambda_min_nm": 575,
+     "lambda_max_nm": 680,
+     "value": 0.01,
+     "kind": "<=",
+     "points": 31
+    }
+   ]
+  },
+  {
+   "name": "BP_532",
+   "category": "Filters",
+   "description": "Band-pass at 532 nm (0°): two-cavity Fabry–Perot of TiO₂ / SiO₂ quarter waves (HL)³H 2L (LH)³ L (HL)³H 2L (LH)³, FWHM ≈ 4 nm, blocking < 1 % beyond ±8 nm",
+   "design_nm": 532.0,
+   "band_nm": [
+    480,
+    600
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.519473,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 180.29340128865832
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 180.29340128865832
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.359267,
+     "thickness_nm": 56.37345046317771
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "T",
+     "lambda_min_nm": 532,
+     "lambda_max_nm": 532,
+     "value": 0.95,
+     "kind": ">=",
+     "points": 1
+    },
+    {
+     "quantity": "T",
+     "lambda_min_nm": 480,
+     "lambda_max_nm": 524,
+     "value": 0.01,
+     "kind": "<=",
+     "points": 45
+    },
+    {
+     "quantity": "T",
+     "lambda_min_nm": 540,
+     "lambda_max_nm": 600,
+     "value": 0.01,
+     "kind": "<=",
+     "points": 61
+    }
+   ]
+  },
+  {
+   "name": "NOTCH_532",
+   "category": "Filters",
+   "description": "Notch (band-block) at 532 nm: (HL)^40 H quarter waves of the low-contrast pair Al₂O₃ / SiO₂, a narrow stop band (T < 1 %); the pass bands ripple (T > 70 % from 450 to 490 nm)",
+   "design_nm": 532.0,
+   "band_nm": [
+    450,
+    620
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.519473,
+   "layers": [
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.475373,
+     "thickness_nm": 90.14670064432916
+    },
+    {
+     "material_label": "Al₂O₃",
+     "material": "AL2O3_FILM",
+     "index": 1.657345,
+     "thickness_nm": 80.24881682105647
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "T",
+     "lambda_min_nm": 530,
+     "lambda_max_nm": 534,
+     "value": 0.01,
+     "kind": "<=",
+     "points": 9
+    },
+    {
+     "quantity": "T",
+     "lambda_min_nm": 450,
+     "lambda_max_nm": 490,
+     "value": 0.7,
+     "kind": ">=",
+     "points": 21
+    }
+   ]
+  },
+  {
+   "name": "BS_50_45",
+   "category": "Beam splitters",
+   "description": "Plate beam splitter at 45° (unpolarised mean R 50 ± 10 %) for 450–650 nm, Ta₂O₅ / SiO₂",
+   "design_nm": 550.0,
+   "band_nm": [
+    450,
+    650
+   ],
+   "angle_deg": 45.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.518522,
+   "layers": [
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.157267,
+     "thickness_nm": 65.36764407941277
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 104.64530741585557
+    },
+    {
+     "material_label": "Ta₂O₅",
+     "material": "TA2O5_FILM",
+     "index": 2.157267,
+     "thickness_nm": 65.48987116265829
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "angle_deg": 45.0,
+     "lambda_min_nm": 450,
+     "lambda_max_nm": 650,
+     "value": 0.5,
+     "tolerance": 0.1,
+     "points": 41
+    }
+   ]
+  },
+  {
+   "name": "PBS_MACNEILLE",
+   "category": "Beam splitters",
+   "description": "MacNeille polarising beam-splitter cube (45° in glass n 1.7657): every TiO₂ / SiO₂ interface at Brewster's angle for p at 550 nm, so p is transmitted and s reflected",
+   "design_nm": 550.0,
+   "band_nm": [
+    450,
+    680
+   ],
+   "angle_deg": 45.0,
+   "incident_index": 1.76574,
+   "substrate_material": null,
+   "substrate_index": 1.76574,
+   "layers": [
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.474653,
+     "thickness_nm": 175.2365717369476
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.346517,
+     "thickness_nm": 69.2080803997909
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "T",
+     "polarization": "p",
+     "angle_deg": 45.0,
+     "lambda_min_nm": 460,
+     "lambda_max_nm": 680,
+     "value": 0.97,
+     "kind": ">=",
+     "points": 23
+    },
+    {
+     "quantity": "R",
+     "polarization": "s",
+     "angle_deg": 45.0,
+     "lambda_min_nm": 500,
+     "lambda_max_nm": 600,
+     "value": 0.98,
+     "kind": ">=",
+     "points": 21
+    }
+   ]
+  },
+  {
+   "name": "DM_800",
+   "category": "Mirrors",
+   "description": "Dispersive (chirped) mirror for 800 nm ultrafast pulses: R ≥ 99 % over 760–840 nm and GDD −40 ± 15 fs² per bounce over 770–830 nm, 24 TiO₂ / SiO₂ layers refined from a linearly chirped quarter-wave stack",
+   "design_nm": 800.0,
+   "band_nm": [
+    760,
+    840
+   ],
+   "angle_deg": 0.0,
+   "incident_index": 1.0,
+   "substrate_material": "N-BK7",
+   "substrate_index": 1.510776,
+   "layers": [
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 187.34478488620869
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 68.08842237149263
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 107.06433954208379
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 71.4084913777832
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 112.63617194575986
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 68.41882201674785
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 123.64907877078652
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 84.75011302938968
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 131.29459267178277
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 87.21290406703847
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 133.7300443843962
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 87.38850994167876
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 134.5462011946497
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 87.12012309517398
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 135.234335228308
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 87.38501981420504
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 136.55093308066247
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 88.48626227943012
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 138.5498201673944
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 90.18572310041142
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 140.90288106918044
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 92.05985163887358
+    },
+    {
+     "material_label": "SiO₂",
+     "material": "SIO2_FILM",
+     "index": 1.469199,
+     "thickness_nm": 143.1955263554499
+    },
+    {
+     "material_label": "TiO₂",
+     "material": "TIO2_FILM",
+     "index": 2.260932,
+     "thickness_nm": 93.6648933016232
+    }
+   ],
+   "spec": [
+    {
+     "quantity": "R",
+     "lambda_min_nm": 760,
+     "lambda_max_nm": 840,
+     "value": 0.99,
+     "kind": ">=",
+     "points": 41
+    },
+    {
+     "quantity": "GDD",
+     "of": "R",
+     "lambda_min_nm": 770,
+     "lambda_max_nm": 830,
+     "value": -40.0,
+     "tolerance": 15.0,
+     "kind": "=",
+     "points": 31
+    }
+   ]
+  }
+ ]
+}

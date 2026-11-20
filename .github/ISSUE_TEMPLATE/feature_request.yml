@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest an analysis, a surface type, a workflow or an improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: The engineering task you are trying to accomplish, and what is missing or hard today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How it could work in OptiCore Studio.
+  - type: textarea
+    id: references
+    attributes:
+      label: Physics and references
+      description: |
+        The equations, papers or standards it should follow, and a benchmark it could
+        be checked against. Every physics feature needs an independent check
+        (docs/VALIDATION.md).
+  - type: checkboxes
+    id: roadmap
+    attributes:
+      label: Roadmap
+      options:
+        - label: I checked docs/ROADMAP.md and the open issues.

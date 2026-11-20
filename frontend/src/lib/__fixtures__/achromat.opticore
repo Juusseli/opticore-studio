@@ -1,0 +1,384 @@
+{
+  "format": "opticore-project",
+  "schema_version": 1,
+  "id": "8390cbcfbb01",
+  "metadata": {
+    "name": "Achromatic doublet (optimized)",
+    "description": "Cemented N-BK7/F2 doublet, f = 100 mm, F/5, 2 deg half field. Optimised with OptiCore least squares.",
+    "author": "",
+    "created": "2026-10-11T03:25:34.973Z",
+    "modified": "2026-10-11T03:25:34.973Z",
+    "tags": []
+  },
+  "system": {
+    "name": "Achromatic doublet f=100 F/5",
+    "units": "mm",
+    "surfaces": [
+      {
+        "id": "obj",
+        "type": "standard",
+        "label": "Object",
+        "comment": "",
+        "radius": null,
+        "thickness": null,
+        "material": "AIR",
+        "semi_diameter": 10.0,
+        "semi_diameter_mode": "auto",
+        "conic": 0.0,
+        "aspheric": [],
+        "is_stop": false,
+        "coating": "",
+        "decenter_x": 0.0,
+        "decenter_y": 0.0,
+        "tilt_x": 0.0,
+        "tilt_y": 0.0,
+        "tilt_z": 0.0,
+        "cb_order": 0
+      },
+      {
+        "id": "d1",
+        "type": "standard",
+        "label": "Crown front",
+        "comment": "",
+        "radius": 49.5259,
+        "thickness": 6.0,
+        "material": "N-BK7",
+        "semi_diameter": 12.5,
+        "semi_diameter_mode": "auto",
+        "conic": 0.0,
+        "aspheric": [],
+        "is_stop": true,
+        "coating": "MGF2_QW550",
+        "decenter_x": 0.0,
+        "decenter_y": 0.0,
+        "tilt_x": 0.0,
+        "tilt_y": 0.0,
+        "tilt_z": 0.0,
+        "cb_order": 0
+      },
+      {
+        "id": "d2",
+        "type": "standard",
+        "label": "Cemented",
+        "comment": "",
+        "radius": -38.6718,
+        "thickness": 2.5,
+        "material": "F2",
+        "semi_diameter": 12.5,
+        "semi_diameter_mode": "auto",
+        "conic": 0.0,
+        "aspheric": [],
+        "is_stop": false,
+        "coating": "",
+        "decenter_x": 0.0,
+        "decenter_y": 0.0,
+        "tilt_x": 0.0,
+        "tilt_y": 0.0,
+        "tilt_z": 0.0,
+        "cb_order": 0
+      },
+      {
+        "id": "d3",
+        "type": "standard",
+        "label": "Flint back",
+        "comment": "",
+        "radius": -276.2582,
+        "thickness": 94.8055,
+        "material": "AIR",
+        "semi_diameter": 12.5,
+        "semi_diameter_mode": "auto",
+        "conic": 0.0,
+        "aspheric": [],
+        "is_stop": false,
+        "coating": "",
+        "decenter_x": 0.0,
+        "decenter_y": 0.0,
+        "tilt_x": 0.0,
+        "tilt_y": 0.0,
+        "tilt_z": 0.0,
+        "cb_order": 0
+      },
+      {
+        "id": "img",
+        "type": "standard",
+        "label": "Image",
+        "comment": "",
+        "radius": null,
+        "thickness": 0.0,
+        "material": "AIR",
+        "semi_diameter": 10.0,
+        "semi_diameter_mode": "auto",
+        "conic": 0.0,
+        "aspheric": [],
+        "is_stop": false,
+        "coating": "",
+        "decenter_x": 0.0,
+        "decenter_y": 0.0,
+        "tilt_x": 0.0,
+        "tilt_y": 0.0,
+        "tilt_z": 0.0,
+        "cb_order": 0
+      }
+    ],
+    "wavelengths": [
+      {
+        "value": 0.4861327,
+        "weight": 1.0
+      },
+      {
+        "value": 0.5875618,
+        "weight": 1.0
+      },
+      {
+        "value": 0.6562725,
+        "weight": 1.0
+      }
+    ],
+    "primary_wavelength": 1,
+    "field_type": "angle",
+    "fields": [
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "weight": 1.0
+      },
+      {
+        "x": 0.0,
+        "y": 1.4,
+        "weight": 1.0
+      },
+      {
+        "x": 0.0,
+        "y": 2.0,
+        "weight": 1.0
+      }
+    ],
+    "aperture": {
+      "type": "epd",
+      "value": 20.0
+    },
+    "ray_aiming": "paraxial",
+    "temperature_c": 20.0
+  },
+  "custom_materials": [],
+  "optimization": {
+    "variables": [
+      {
+        "surface_id": "d1",
+        "parameter": "curvature",
+        "min": -0.1,
+        "max": 0.1,
+        "enabled": true
+      },
+      {
+        "surface_id": "d2",
+        "parameter": "curvature",
+        "min": -0.1,
+        "max": 0.1,
+        "enabled": true
+      },
+      {
+        "surface_id": "d3",
+        "parameter": "curvature",
+        "min": -0.1,
+        "max": 0.1,
+        "enabled": true
+      },
+      {
+        "surface_id": "d3",
+        "parameter": "thickness",
+        "min": 50.0,
+        "max": 150.0,
+        "enabled": true
+      }
+    ],
+    "operands": [
+      {
+        "type": "rms_spot",
+        "target": 0.0,
+        "weight": 1.0,
+        "field": null,
+        "wavelength": null,
+        "surface_id": null,
+        "rings": 4,
+        "reference": "centroid",
+        "frequency": null,
+        "direction": "average",
+        "enabled": true
+      },
+      {
+        "type": "efl",
+        "target": 100.0,
+        "weight": 1.0,
+        "field": null,
+        "wavelength": null,
+        "surface_id": null,
+        "rings": 4,
+        "reference": "centroid",
+        "frequency": null,
+        "direction": "average",
+        "enabled": true
+      },
+      {
+        "type": "axial_color",
+        "target": 0.0,
+        "weight": 0.05,
+        "field": null,
+        "wavelength": null,
+        "surface_id": null,
+        "rings": 4,
+        "reference": "centroid",
+        "frequency": null,
+        "direction": "average",
+        "enabled": true
+      },
+      {
+        "type": "min_edge_thickness",
+        "target": 1.5,
+        "weight": 1.0,
+        "field": null,
+        "wavelength": null,
+        "surface_id": "d1",
+        "rings": 4,
+        "reference": "centroid",
+        "frequency": null,
+        "direction": "average",
+        "enabled": true
+      }
+    ],
+    "algorithm": "local",
+    "max_evaluations": 3000,
+    "multistart_runs": 6,
+    "seed": 1
+  },
+  "tolerancing": {
+    "tolerances": [
+      {
+        "id": "5af1adb78628",
+        "type": "radius",
+        "surface_id": "d1",
+        "surface_id_end": null,
+        "min": -0.0495259,
+        "max": 0.0495259,
+        "enabled": true
+      },
+      {
+        "id": "929f2f460fff",
+        "type": "thickness",
+        "surface_id": "d1",
+        "surface_id_end": null,
+        "min": -0.05,
+        "max": 0.05,
+        "enabled": true
+      },
+      {
+        "id": "903e4197ff8c",
+        "type": "index",
+        "surface_id": "d1",
+        "surface_id_end": null,
+        "min": -0.0005,
+        "max": 0.0005,
+        "enabled": true
+      },
+      {
+        "id": "e50e504ca361",
+        "type": "radius",
+        "surface_id": "d2",
+        "surface_id_end": null,
+        "min": -0.0386718,
+        "max": 0.0386718,
+        "enabled": true
+      },
+      {
+        "id": "11696def1efe",
+        "type": "thickness",
+        "surface_id": "d2",
+        "surface_id_end": null,
+        "min": -0.05,
+        "max": 0.05,
+        "enabled": true
+      },
+      {
+        "id": "658682e34639",
+        "type": "index",
+        "surface_id": "d2",
+        "surface_id_end": null,
+        "min": -0.0005,
+        "max": 0.0005,
+        "enabled": true
+      },
+      {
+        "id": "b1336974aa04",
+        "type": "radius",
+        "surface_id": "d3",
+        "surface_id_end": null,
+        "min": -0.2762582,
+        "max": 0.2762582,
+        "enabled": true
+      },
+      {
+        "id": "5de07e1ba91f",
+        "type": "element_decenter_x",
+        "surface_id": "d1",
+        "surface_id_end": "d3",
+        "min": -0.02,
+        "max": 0.02,
+        "enabled": true
+      },
+      {
+        "id": "8af7829b3d70",
+        "type": "element_decenter_y",
+        "surface_id": "d1",
+        "surface_id_end": "d3",
+        "min": -0.02,
+        "max": 0.02,
+        "enabled": true
+      },
+      {
+        "id": "482f18de22f5",
+        "type": "element_tilt_x",
+        "surface_id": "d1",
+        "surface_id_end": "d3",
+        "min": -0.016666666666666666,
+        "max": 0.016666666666666666,
+        "enabled": true
+      },
+      {
+        "id": "17bee0000b45",
+        "type": "element_tilt_y",
+        "surface_id": "d1",
+        "surface_id_end": "d3",
+        "min": -0.016666666666666666,
+        "max": 0.016666666666666666,
+        "enabled": true
+      }
+    ],
+    "compensators": [
+      {
+        "surface_id": "d3",
+        "parameter": "thickness",
+        "range": 2.0,
+        "enabled": true
+      }
+    ],
+    "criterion": "rms_spot",
+    "rings": 3,
+    "monte_carlo_trials": 50,
+    "distribution": "normal",
+    "seed": 1,
+    "compensator_evaluations": 40
+  },
+  "analysis_settings": {},
+  "ui": {},
+  "revisions": [],
+  "saved_optimizations": [],
+  "provenance": {
+    "created_with": "OptiCore Studio engine 0.1.0",
+    "imports": [],
+    "warnings": []
+  },
+  "checksum": {
+    "algorithm": "sha256",
+    "value": "31836520a3fcb000d196001b2b44ad9a1a0a653ad4fbca55699d625199d9d679"
+  }
+}

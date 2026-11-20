@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use OptiCore Studio in published work, please cite it as below."
+type: software
+title: "OptiCore Studio: optical design and simulation in the browser"
+abstract: >-
+  A browser-based optical design and simulation environment on an independently
+  implemented, test-validated Python engine: sequential lens design, analysis,
+  optimisation and tolerancing, thin-film coatings, non-sequential stray light and
+  illumination, and wave optics (fibre modes, RCWA, physical-optics propagation,
+  FDTD).
+authors:
+  - family-names: Heiskanen
+    given-names: Juuso
+version: 0.1.0
+license: AGPL-3.0-or-later
+keywords:
+  - optics
+  - optical design
+  - lens design
+  - ray tracing
+  - thin films
+  - physical optics
+  - optimisation

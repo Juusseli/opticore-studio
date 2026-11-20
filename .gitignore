@@ -1,0 +1,22 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/node_modules/.tmp/
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Build output
+backend/build/
+# Local development files (not published)
+.claude/
+claude.md
+CLAUDE.md
+docs/REA_INTEGRATION.md

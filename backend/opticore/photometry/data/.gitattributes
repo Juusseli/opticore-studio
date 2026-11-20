@@ -1,0 +1,2 @@
+# CIE datasets: kept byte for byte (their MD5 sums are checked in tests/test_photometry.py)
+*.csv -text

@@ -1,0 +1,51 @@
+name: Bug report
+description: Something does not work, or a result looks wrong
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. For a wrong optical result, a
+        reference value (a textbook, a paper, another program or a hand calculation)
+        helps most.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what you saw instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: |
+        Steps, or the template you started from. If you can, attach the project
+        (File → Export, a `.opticore` file) or a ZMX file.
+      placeholder: |
+        1. Start screen → Double Gauss f/1.7
+        2. Analyze → MTF
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference value (for a wrong result)
+      description: The value you expected and where it comes from.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: The engine version is shown in the status bar ("Engine online 0.1.0"); a commit hash is even better.
+  - type: input
+    id: environment
+    attributes:
+      label: Operating system and browser
+      placeholder: Windows 11, Chrome 131
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console or engine messages
+      description: Copy anything relevant from the Console tab, the Validation tab or the engine window.
+      render: text

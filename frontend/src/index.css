@@ -1,0 +1,287 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ tokens */
+:root {
+  --c-bg: #0a0e13;
+  --c-panel: #10151c;
+  --c-panel-2: #141a22;
+  --c-elev: #1a222d;
+  --c-hover: #1f2935;
+  --c-border: #222c39;
+  --c-border-strong: #2f3b4b;
+  --c-text: #e3e9f0;
+  --c-muted: #95a1b1;
+  --c-faint: #7b899c;
+  --c-accent: #4db8ff;
+  --c-accent-strong: #117bc3;
+  --c-accent-soft: rgba(58, 176, 255, 0.14);
+  --c-select: rgba(58, 176, 255, 0.18);
+  --c-ok: #3ccf8e;
+  --c-warn: #f2b84b;
+  --c-danger: #ff6b6b;
+  --c-glass: rgba(120, 190, 255, 0.16);
+  --c-glass-edge: rgba(150, 205, 255, 0.75);
+  --c-grid: rgba(255, 255, 255, 0.045);
+  --c-axis: rgba(255, 255, 255, 0.22);
+  --c-input: #0c1117;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  /* data colours (lib/palette.ts): Okabe–Ito hues, each at least 3:1 against the panel */
+  --d-1: #56b4e9;
+  --d-2: #e69f00;
+  --d-3: #009e73;
+  --d-4: #cc79a7;
+  --d-5: #d55e00;
+  --d-6: #f0e442;
+  --d-7: #0072b2;
+  --d-8: #999999;
+  --d-ref: #8593a5;
+  --d-overlay: #ffffff;
+  --d-fill: rgba(86, 180, 233, 0.18);
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --c-bg: #e9edf2;
+  --c-panel: #ffffff;
+  --c-panel-2: #f6f8fb;
+  --c-elev: #ffffff;
+  --c-hover: #eef2f7;
+  --c-border: #d8dee6;
+  --c-border-strong: #c3ccd7;
+  --c-text: #111820;
+  --c-muted: #4e5a6a;
+  --c-faint: #627081;
+  --c-accent: #0961ab;
+  --c-accent-strong: #064f8c;
+  --c-accent-soft: rgba(10, 114, 201, 0.1);
+  --c-select: rgba(10, 114, 201, 0.12);
+  --c-ok: #117b4d;
+  --c-warn: #926119;
+  --c-danger: #ca2f2f;
+  --c-glass: rgba(40, 120, 210, 0.13);
+  --c-glass-edge: rgba(20, 90, 170, 0.8);
+  --c-grid: rgba(0, 0, 0, 0.05);
+  --c-axis: rgba(0, 0, 0, 0.25);
+  --c-input: #ffffff;
+  --shadow: 0 12px 32px rgba(20, 30, 50, 0.18);
+  /* the same hues, darker where the light panel needs it for 3:1 */
+  --d-1: #0072b2;
+  --d-2: #b87800;
+  --d-3: #007a5a;
+  --d-4: #a8508a;
+  --d-5: #c24f00;
+  --d-6: #857a00;
+  --d-7: #2a87c2;
+  --d-8: #6b6b6b;
+  --d-ref: #586577;
+  --d-overlay: #ffffff;
+  --d-fill: rgba(0, 114, 178, 0.14);
+  color-scheme: light;
+}
+
+/* data roles: the same colours in every plot and in the 2D/3D views */
+:root {
+  --d-mark: var(--d-2);
+  --d-target: var(--d-3);
+  --d-source: var(--d-2);
+  --d-detector: var(--d-3);
+  --d-direct: var(--d-2);
+  --d-ghost: var(--d-5);
+  --d-scatter: var(--d-3);
+  --d-measure: var(--d-6);
+}
+
+@theme {
+  --color-bg: var(--c-bg);
+  --color-panel: var(--c-panel);
+  --color-panel-2: var(--c-panel-2);
+  --color-elev: var(--c-elev);
+  --color-hover: var(--c-hover);
+  --color-line: var(--c-border);
+  --color-line-strong: var(--c-border-strong);
+  --color-fg: var(--c-text);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+  --color-accent: var(--c-accent);
+  --color-accent-strong: var(--c-accent-strong);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-select: var(--c-select);
+  --color-ok: var(--c-ok);
+  --color-warn: var(--c-warn);
+  --color-danger: var(--c-danger);
+  --color-input: var(--c-input);
+  --font-sans: 'Inter Variable', 'Inter', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'Cascadia Mono', 'Consolas', ui-monospace, monospace;
+  /* type scale: four named sizes (text-caption / text-small / text-body / text-title) */
+  --text-caption: 10.5px;
+  --text-small: 11.5px;
+  --text-body: 12.5px;
+  --text-title: 14px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  /* numbers line up in every column and stat */
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-border-strong) transparent;
+}
+
+::selection {
+  background: var(--c-select);
+}
+
+/* Component classes live in a layer so Tailwind utilities (h-6, text-caption, …) can refine them. */
+@layer components {
+  .num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: var(--text-small);
+  }
+}
+
+/* Engineering table: in the components layer, so that utilities on cells (px-2, text-right, whitespace-normal)
+   override these defaults (unlayered rules beat every utility) */
+@layer components {
+  .eng-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+  }
+  .eng-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--c-panel-2);
+    color: var(--c-muted);
+    font-weight: 500;
+    font-size: var(--text-small);
+    text-align: left;
+    padding: 5px 6px;
+    border-bottom: 1px solid var(--c-border);
+    white-space: nowrap;
+  }
+  .eng-table td {
+    border-bottom: 1px solid var(--c-border);
+    padding: 0;
+    height: 26px;
+    white-space: nowrap;
+  }
+  /* long text cells that may wrap */
+  .eng-table td.whitespace-normal,
+  .eng-table.wrap-first td:first-child {
+    white-space: normal;
+  }
+  .eng-table tr:hover td {
+    background: var(--c-hover);
+  }
+  .eng-table tr.selected td {
+    background: var(--c-select);
+  }
+}
+
+/* tertiary text stays readable on selection tints (faint is 4.5:1 only on resting surfaces) */
+:is(.bg-select, .bg-accent-soft, tr.selected) .text-faint {
+  color: var(--c-muted);
+}
+
+@layer components {
+  .cell-input {
+    width: 100%;
+    height: 25px;
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 0 6px;
+    color: inherit;
+    outline: none;
+    font: inherit;
+  }
+  .cell-input:focus {
+    border-color: var(--c-accent);
+    background: var(--c-input);
+  }
+  .cell-input.invalid {
+    border-color: var(--c-danger);
+    background: color-mix(in srgb, var(--c-danger) 10%, transparent);
+  }
+
+  .field-input {
+    /* controls are 28 px (h-7) by default and 24 px (h-6) in dense bars */
+    height: 28px;
+    border-radius: 6px;
+    border: 1px solid var(--c-border);
+    background: var(--c-input);
+    padding: 0 7px;
+    color: var(--c-text);
+    outline: none;
+    font: inherit;
+    min-width: 0;
+  }
+  .field-input:focus {
+    border-color: var(--c-accent);
+    box-shadow: 0 0 0 2px var(--c-accent-soft);
+  }
+  .field-input.invalid {
+    border-color: var(--c-danger);
+  }
+  select.field-input {
+    padding-right: 4px;
+  }
+}
+
+.resize-h {
+  cursor: col-resize;
+}
+.resize-v {
+  cursor: row-resize;
+}
+
+@keyframes oc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: oc-spin 0.9s linear infinite;
+}
+
+@keyframes oc-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-in {
+  animation: oc-fade-in 0.14s ease-out;
+}
+
+@layer components {
+  .kbd {
+    font-family: var(--font-mono);
+    font-size: var(--text-caption);
+    padding: 1px 5px;
+    border-radius: 4px;
+    border: 1px solid var(--c-border-strong);
+    color: var(--c-muted);
+    background: var(--c-panel-2);
+  }
+}
