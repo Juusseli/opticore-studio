@@ -11,6 +11,13 @@ updates:
     directory: /frontend
     schedule:
       interval: monthly
+    ignore:
+      # three 0.187 breaks postprocessing 6.39 (the 3D view renders nothing); lift this when postprocessing
+      # supports it, and check the 3D view in a browser (docs/DEVELOPMENT.md)
+      - dependency-name: "three"
+        versions: [">=0.187"]
+      - dependency-name: "@types/three"
+        versions: [">=0.187"]
     groups:
       npm:
         patterns: ["*"]

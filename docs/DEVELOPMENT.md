@@ -27,6 +27,13 @@ All of them run on every push (`.github/workflows/ci.yml`). The linter must repo
 no warnings; keep helpers and constants out of component files (React fast
 refresh), in a sibling `.ts` module.
 
+### Dependency updates
+
+Dependabot proposes monthly grouped updates. The tests do not draw WebGL, so an
+update of three.js, React Three Fiber or postprocessing needs a look at the 3D view
+in a browser (a lens in *3D Model*, with the section plane on) before it is merged.
+three.js stays below 0.187 until postprocessing supports it (`.github/dependabot.yml`).
+
 ## Invariants
 
 * **One source of numbers.** The Python engine (`backend/opticore`) computes
