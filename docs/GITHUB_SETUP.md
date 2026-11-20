@@ -63,7 +63,9 @@ the Windows files are built unsigned, and Windows shows "Unknown publisher" (the
 user chooses *More info → Run anyway*).
 
 1. Apply at <https://signpath.org/apply> once the repository is public. The
-   policy page they ask for is `docs/CODE_SIGNING.md`.
+   policy page they ask for is `docs/CODE_SIGNING.md`. Their conditions include
+   multi-factor authentication on the team's GitHub and SignPath accounts, and an
+   open-source licence without commercial dual licensing (ADR-059).
 2. After approval, set up in SignPath:
    * a project with the slug `opticore-studio`, with GitHub as its trusted build
      system;

@@ -213,6 +213,7 @@ jobs:
     env:
       VERSION: ${{ needs.version.outputs.version }}
       GH_TOKEN: ${{ github.token }}
+      SIGNED: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/download-artifact@v8
@@ -224,6 +225,11 @@ jobs:
         run: |
           cd out
           sha256sum * > SHA256SUMS.txt
+          if [ "$SIGNED" = true ]; then
+            signing="Windows files: free code signing provided by [SignPath.io](https://about.signpath.io/), certificate by [SignPath Foundation](https://signpath.org/)."
+          else
+            signing="The Windows files of this release are not signed."
+          fi
           cat > notes.md <<EOF
           ## Download
 
@@ -236,6 +242,8 @@ jobs:
           offline. Projects are kept in that browser profile; export \`.opticore\` files for backups.
 
           \`SHA256SUMS.txt\` lists the checksums of the files. Changes: [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md).
+
+          $signing [Code signing policy](https://github.com/${{ github.repository }}/blob/main/docs/CODE_SIGNING.md).
           EOF
           gh release create "${{ github.ref_name }}" --draft --title "OptiCore Studio $VERSION" --notes-file notes.md \
             "OptiCore-Studio-$VERSION-Setup.exe" "OptiCore-Studio-$VERSION-x86_64.AppImage" SHA256SUMS.txt

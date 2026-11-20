@@ -78,7 +78,7 @@ Windows, or delete the AppImage on Linux. On macOS, run it from source (below).
 
 Every release lists the SHA-256 sums of its files. Windows releases: free code signing
 provided by SignPath.io, certificate by SignPath Foundation
-([code signing policy](docs/CODE_SIGNING.md)). Version 0.1.0 is not yet signed.
+([Code signing policy](docs/CODE_SIGNING.md)). Version 0.1.0 is not yet signed.
 
 ## Run from source
 
@@ -368,8 +368,8 @@ independently.
 
 The data files keep their own licences (CC BY-SA 4.0, CC BY 4.0, CC0 and public
 domain), listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) with the
-licences of the dependencies. Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md).
-For licensing on other terms, contact the copyright holder.
+licences of the dependencies. Contributions are accepted under the same licence:
+see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Data sources
 

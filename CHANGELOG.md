@@ -31,6 +31,9 @@ Notable changes to OptiCore Studio. The format follows
   their own modules, so the linter reports no warnings.
 - Test files with internal names renamed after what they test.
 - The user-interface package is named `opticore-studio-ui`, version 0.1.0.
+- Licensing is AGPL-3.0-or-later only: contributions are accepted under the same
+  licence, and no other licence is offered (ADR-059). The code signing policy
+  names its authors, reviewers and approvers, and every release links to it.
 
 ### Removed
 - The three fibre-to-photodiode coupler templates. The beam tests that used

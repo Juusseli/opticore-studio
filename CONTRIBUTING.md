@@ -5,18 +5,15 @@ Thank you for your interest in OptiCore Studio.
 ## Licence of contributions
 
 OptiCore Studio is licensed under the GNU Affero General Public License,
-version 3 or later (AGPL-3.0-or-later). By submitting a contribution (a pull
-request, patch or other material), you agree that:
-
-1. your contribution is licensed under AGPL-3.0-or-later; and
-2. the project maintainer may also license your contribution under other
-   terms, for example a commercial licence offered alongside the AGPL.
+version 3 or later (AGPL-3.0-or-later), and contributions are accepted under the
+same licence. By submitting a contribution (a pull request, patch or other
+material), you agree that it is licensed under AGPL-3.0-or-later. There is no
+copyright assignment and no separate contributor licence agreement, and the code
+is not offered under any other licence.
 
 You also confirm that you have the right to submit the contribution, and that it
 contains no code, data or assets copied from proprietary software or from
 sources whose licence does not allow this.
-
-If you do not agree to point 2, say so in your pull request before it is merged.
 
 ## Engineering rules
 

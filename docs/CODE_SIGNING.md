@@ -19,11 +19,20 @@ Each release's files and their SHA-256 sums are published on the
 
 | Role | Members |
 |---|---|
-| Committers and reviewers | [Juuso Heiskanen](https://github.com/Juusseli) |
+| Authors (commit to the repository) | [Juuso Heiskanen](https://github.com/Juusseli) |
+| Reviewers (review contributions before they are merged) | [Juuso Heiskanen](https://github.com/Juusseli) |
 | Approvers (approve each signing request) | [Juuso Heiskanen](https://github.com/Juusseli) |
 
-Every change to the code is reviewed by a committer before it is merged, and
-every signing request is approved by an approver.
+Contributions from outside the team, including automated dependency updates, are
+merged only through pull requests that a reviewer has checked. Every signing
+request is approved by an approver. The team's GitHub and SignPath accounts use
+multi-factor authentication.
+
+## Licence
+
+OptiCore Studio is licensed under AGPL-3.0-or-later only, an OSI-approved open
+source licence, and is not offered under any other licence. Contributions are
+accepted under the same licence ([CONTRIBUTING.md](../CONTRIBUTING.md)).
 
 ## Privacy policy
 

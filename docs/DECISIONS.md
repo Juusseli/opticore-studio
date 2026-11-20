@@ -1792,9 +1792,9 @@ every user run the engine on their own machine at no hosting cost.
   (CC BY 4.0), refractiveindex.info constants (CC0), the sample photographs (CC0
   and NASA public domain), the glass coefficients (factual data cited per entry).
   It also lists the dependencies' licences and the trademark statement.
-* `CONTRIBUTING.md`: contributions are licensed under AGPL-3.0-or-later, and the
-  maintainer may also license them on other terms. This keeps dual licensing
-  possible.
+* `CONTRIBUTING.md`: contributions are accepted under the project's licence,
+  AGPL-3.0-or-later, with no copyright assignment. The code is offered under no
+  other licence (ADR-059).
 * `.github/workflows/ci.yml` runs the engine tests (Python 3.14,
   `OPTICORE_WORKERS=2`), the type check and the UI tests on every push.
 
@@ -1802,9 +1802,7 @@ every user run the engine on their own machine at no hosting cost.
 * The program stays free for everyone, including engineers in companies.
 * A modified version offered as a web service must publish its source
   (section 13), so nobody can turn it into a closed hosted product.
-* Only the copyright holder can sell other terms: a commercial licence for
-  companies that cannot accept the AGPL, or a hosted version.
-* MIT would give the widest use but no such option.
+* MIT would give the widest use, but it would also allow closed derivatives.
 
 **Compatibility:**
 * All dependencies are permissive: BSD, MIT, Apache-2.0, Zlib, ISC and OFL-1.1.
@@ -1845,9 +1843,8 @@ every user run the engine on their own machine at no hosting cost.
   preview, topics, Discussions, branch protection and the CI badge.
 
 **Trade-offs:**
-* Companies that avoid the AGPL will not use or contribute without another
-  licence.
-* Dual licensing needs the contributors' consent (CONTRIBUTING.md).
+* Companies that avoid the AGPL will not build on the code, and no other licence
+  is offered (ADR-059).
 * The AGPL's network clause applies only to modified versions run as a service.
   Local use has no obligations.
 * The CI workflow cannot be run before the repository exists on GitHub.
@@ -1920,3 +1917,43 @@ install with one click, and the Windows packages must be signed.
 * The library belongs to `http://127.0.0.1:47321`. If another program holds the
   port, the next free one is used, its library is separate, and the log says so.
 * The app window uses the user's Edge or Chrome profile.
+
+## ADR-059: AGPL only, with free code signing
+**Context:**
+* The Windows packages are to be signed (ADR-058), so that Windows names the
+  publisher instead of warning about an unknown one.
+* SignPath Foundation signs open-source projects free of charge. One of its
+  conditions is an OSI-approved licence *without commercial dual licensing* for
+  all components.
+* ADR-057 had kept dual licensing open: the contribution terms let the
+  maintainer also license contributions on other terms.
+* A certificate of the project's own costs a yearly fee, and its key must be
+  kept on a hardware token or in a cloud signing service.
+
+**Decision:**
+* The code is licensed under AGPL-3.0-or-later only. No commercial licence or
+  other terms are offered.
+* Contributions are accepted under the same licence (`CONTRIBUTING.md`), with no
+  copyright assignment and no contributor licence agreement.
+* The Windows program and installer are signed through SignPath Foundation. The
+  policy (`docs/CODE_SIGNING.md`) names the authors, reviewers and approvers,
+  states the privacy policy, and is linked from the README and every release.
+* Paid work around the program is not affected: support, consulting, training,
+  custom development and hosting.
+
+**Why:**
+* Signing is the last step of a one-click install. Free signing for an
+  open-source project costs nothing to keep.
+* Dual licensing would have needed a paid certificate and the consent of every
+  contributor. It had not been used, and no outside contributions had been
+  accepted under the earlier terms.
+
+**Trade-offs:**
+* A company that cannot accept the AGPL cannot buy another licence. Local use
+  has no AGPL obligations, so this matters only to those who would distribute a
+  closed derivative or offer a modified version as a service.
+* Reintroducing dual licensing later would need the consent of every
+  contributor and the end of the SignPath arrangement.
+
+**Checked:** no public file offers other licence terms. `README.md`,
+`CONTRIBUTING.md` and `docs/CODE_SIGNING.md` state AGPL-3.0-or-later only.
