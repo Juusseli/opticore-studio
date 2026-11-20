@@ -66,7 +66,7 @@ jobs:
         with:
           name: ui
           path: frontend/dist
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.14'
       - uses: actions/setup-node@v4
@@ -172,7 +172,7 @@ jobs:
         with:
           name: ui
           path: frontend/dist
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.14'
       - uses: actions/setup-node@v4
