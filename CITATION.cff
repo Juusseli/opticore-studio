@@ -12,6 +12,8 @@ authors:
   - family-names: Heiskanen
     given-names: Juuso
 version: 0.1.0
+repository-code: "https://github.com/Juusseli/opticore-studio"
+url: "https://github.com/Juusseli/opticore-studio"
 license: AGPL-3.0-or-later
 keywords:
   - optics

@@ -19,6 +19,7 @@ import type { GlassCatalog, MaterialRecord, Project, StockLens } from './lib/typ
 import { askUnsaved } from './store/confirmStore'
 import { useEngineStore } from './store/engineStore'
 import { useOptStore } from './store/optStore'
+import { toStockLens } from './store/stockStore'
 import { isDirty, useProjectStore } from './store/projectStore'
 import { tolKey, useTolStore } from './store/tolStore'
 import { useUiStore } from './store/uiStore'
@@ -96,7 +97,6 @@ export async function openDesignCandidate(jobId: string, index: number, mode: 'p
 /** A stock lens inserted before surface `at` (never inside an element), either way round, followed by an air
  *  gap: one undo step. Its glasses that come from a stock catalogue's glass records are copied into the project. */
 export async function insertStockLens(lens: StockLens, reversed: boolean, at: number, gapAfter: number, glassRecords: MaterialRecord[] = []): Promise<number> {
-  const { toStockLens } = await import('./store/stockStore')
   const design = designSnapshot()
   const r = await api.stockSurfaces({ lens: toStockLens(lens), reversed, gap_after: gapAfter })
   // `at` indexes the design the lens was chosen for

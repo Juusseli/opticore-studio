@@ -136,6 +136,9 @@ Errors have the shape
 ## Running
 
 * Development: `scripts/dev.ps1` or `scripts/dev.sh` (see `docs/DEVELOPMENT.md`).
+* Desktop program: `opticore/desktop.py` serves the API and the built user interface
+  from one process on `127.0.0.1:47321` and opens an app window (ADR-058). The
+  installable packages are built from it in `packaging/`.
 * Production build: `npm run build` produces static files in `frontend/dist`.
   Serve them behind any reverse proxy that forwards `/api` to uvicorn.
 * No cloud services are used or required. The engine binds to localhost.

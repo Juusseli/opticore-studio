@@ -15,6 +15,8 @@ Thumbs.db
 .idea/
 # Build output
 backend/build/
+packaging/build/
+packaging/dist/
 # Local development files (not published)
 .claude/
 claude.md

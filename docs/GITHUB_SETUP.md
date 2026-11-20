@@ -35,18 +35,67 @@ git push -u origin main
 
 ## 4. After the first push
 
-* Check the **Actions** tab. The first run of `.github/workflows/ci.yml` on Linux
-  may need fixes, because development so far has been on Windows.
-* Add the CI badge at the top of `README.md`, next to the other badges:
+* Check the **Actions** tab: the `tests` workflow (`ci.yml`) runs on every push.
+  Its first run on Linux may need fixes, because development so far has been on
+  Windows. The README's test badge shows its state.
 
-  ```html
-  <a href="https://github.com/OWNER/opticore-studio/actions/workflows/ci.yml"><img src="https://github.com/OWNER/opticore-studio/actions/workflows/ci.yml/badge.svg" alt="tests"></a>
-  ```
+## 5. Releases and code signing
 
-* Add `repository-code: https://github.com/OWNER/opticore-studio` to
-  `CITATION.cff`.
-* Create the first release, for example `v0.1.0`, from the *Releases* page, with
-  notes from `CHANGELOG.md`.
+A release is a version tag. The `release` workflow (`release.yml`) builds the
+Windows installer and the Linux AppImage, tests both, and creates a *draft*
+release with the files and their SHA-256 sums.
+
+1. Set the version in `backend/opticore/__init__.py`, `frontend/package.json`,
+   `CITATION.cff` and `CHANGELOG.md` (the workflow refuses a tag that does not
+   match the engine version).
+2. Tag and push:
+
+   ```bash
+   git tag v0.1.0
+   git push origin v0.1.0
+   ```
+
+3. When the workflow is done, open the draft on the *Releases* page, check it and
+   publish it.
+
+**Code signing (SignPath Foundation, free for open source).** Until it is set up,
+the Windows files are built unsigned, and Windows shows "Unknown publisher" (the
+user chooses *More info → Run anyway*).
+
+1. Apply at <https://signpath.org/apply> once the repository is public. The
+   policy page they ask for is `docs/CODE_SIGNING.md`.
+2. After approval, set up in SignPath:
+   * a project with the slug `opticore-studio`, with GitHub as its trusted build
+     system;
+   * a signing policy `release-signing` with manual approval;
+   * two artifact configurations (check the syntax against SignPath's
+     documentation):
+
+     `program`: the program folder as uploaded by the workflow
+
+     ```xml
+     <artifact-configuration xmlns="http://signpath.io/artifact-configuration/v1">
+       <zip-file>
+         <pe-file path="OptiCore Studio.exe"><authenticode-sign /></pe-file>
+       </zip-file>
+     </artifact-configuration>
+     ```
+
+     `installer`: the installer
+
+     ```xml
+     <artifact-configuration xmlns="http://signpath.io/artifact-configuration/v1">
+       <zip-file>
+         <pe-file path="OptiCore-Studio-*-Setup.exe"><authenticode-sign /></pe-file>
+       </zip-file>
+     </artifact-configuration>
+     ```
+
+3. In GitHub (*Settings → Secrets and variables → Actions*), add the variable
+   `SIGNPATH_ORGANIZATION_ID` and the secret `SIGNPATH_API_TOKEN` (the API token of
+   a SignPath CI user that may submit to the project).
+4. The next tag builds signed files. Approve each signing request in SignPath
+   while the workflow waits.
 
 ## Updating the screenshots
 

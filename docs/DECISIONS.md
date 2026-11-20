@@ -1851,3 +1851,70 @@ every user run the engine on their own machine at no hosting cost.
 * The AGPL's network clause applies only to modified versions run as a service.
   Local use has no obligations.
 * The CI workflow cannot be run before the repository exists on GitHub.
+
+## ADR-058: Installable desktop packages
+**Context:** Running from source needs Python, Node.js and a terminal, but most
+users of an optical design program are not developers. The packages must
+install with one click, and the Windows packages must be signed.
+
+**Decision:**
+* **One program.** `opticore/desktop.py` serves the API and the built user
+  interface from one process on `127.0.0.1:47321`, and opens an app window:
+  Edge or Chrome in app mode, else the default browser.
+  * The port is fixed because the browser keeps the project library per origin.
+  * The program ends when its last window has been closed. The page sends a
+    heartbeat every 10 s and a goodbye on closing.
+  * A second start opens a window on the running program.
+* **PyInstaller, as a folder.** The folder starts faster than a single file, and
+  the LGPL libraries of Open CASCADE stay separate, replaceable files.
+  * On Windows only the DLLs that the OCP module needs are collected: the
+    closure of its PE imports over the wheel's two library folders, 102 files.
+* **Windows.** An Inno Setup installer that asks nothing.
+  * It installs for the current user without administrator rights.
+  * It adds Start menu and desktop shortcuts and opens the program when done.
+  * An update replaces the previous files. Uninstallation removes the program
+    and its log; the projects, kept in the browser, stay.
+* **Linux.** An AppImage built on Ubuntu 22.04, so it runs with glibc 2.35 and
+  newer.
+* **No macOS package.** Signing and notarisation need an Apple developer
+  membership. macOS users run from source.
+* **Release workflow** (`.github/workflows/release.yml`). A version tag builds
+  both packages and runs the self-test of each. On Windows it also installs,
+  self-tests and uninstalls the installer. The result is a draft release with
+  SHA-256 sums.
+  * The Windows program and installer are signed through SignPath Foundation
+    when it is configured. The policy is in `docs/CODE_SIGNING.md`.
+* **Licences.** The licence texts of everything bundled are collected per
+  platform by `packaging/collect_licenses.py` into the package's `licenses`
+  folder.
+
+**Why not the alternatives:**
+* Electron or Tauri would add a second runtime and toolchain, and the interface
+  already runs in a browser.
+* pywebview would need a native web view per platform, with GTK dependencies on
+  Linux.
+* A single-file executable unpacks itself on every start and makes the LGPL
+  libraries harder to replace.
+* Docker is not one click.
+
+**Validation:**
+* `--self-test` checks the server, the user interface, an evaluation, the
+  process pool started through the frozen executable, and the CAD kernel.
+* Checked here on the Windows folder and the installed program, and on the Linux
+  folder and AppImage (Ubuntu 24.04 in WSL). The workflow runs the same checks.
+* Lifetime:
+  * the program was serving after 7.5 s;
+  * a second start reused it and exited after 1 s;
+  * the program ended 8 s after its page was closed.
+* The silent install, the self-test and the uninstallation left nothing behind.
+* `tests/test_desktop.py`.
+
+**Trade-offs:**
+* Size: the Windows installer is 88 MB (the installed folder 444 MB). The Linux
+  folder is 925 MB and the AppImage 169 MB. On Linux the VTK
+  Python modules are included as well; trimming them is possible later.
+* Windows files are unsigned until SignPath approves the project; until then
+  Windows shows "Unknown publisher".
+* The library belongs to `http://127.0.0.1:47321`. If another program holds the
+  port, the next free one is used, its library is separate, and the log says so.
+* The app window uses the user's Edge or Chrome profile.

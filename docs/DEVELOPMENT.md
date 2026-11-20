@@ -67,3 +67,38 @@ All physics is derived from published optics and numerical methods, cited in
 databases from proprietary software, and do not analyse proprietary software to
 reproduce it. Workflows may follow general engineering practice and public
 documentation.
+
+## Desktop program and packages
+
+`opticore/desktop.py` runs the engine and the built user interface as one
+program in an app window (see its docstring for how it starts, finds a running
+copy and ends). Run it from source with `python -m opticore.desktop` after
+`npm run build` in `frontend`.
+
+* `--self-test` checks a build without a window: the server, the user
+  interface, an evaluation, the process pool and the CAD kernel.
+* `OPTICORE_BROWSER` chooses the browser command; `none` opens no window.
+
+`packaging/` builds the installable packages:
+
+| File | Purpose |
+|---|---|
+| `opticore-studio.spec`, `opticore_studio.py` | PyInstaller: the program folder and its entry point |
+| `collect_licenses.py` | the licence texts of everything bundled (`licenses/` in the package) |
+| `windows/opticore-studio.iss` | Inno Setup: the one-click Windows installer |
+| `linux/` | the AppImage: entry script, desktop entry, build script |
+| `assets/`, `make_icons.py` | the program icon |
+
+A local Windows build, from the repository root:
+
+```bash
+cd frontend && npm run build && cd ..
+backend/.venv/Scripts/python -m pip install -e "backend[package]"
+backend/.venv/Scripts/python packaging/collect_licenses.py
+backend/.venv/Scripts/python -m PyInstaller packaging/opticore-studio.spec --noconfirm --distpath packaging/dist --workpath packaging/build/pyinstaller
+"packaging/dist/OptiCore Studio/OptiCore Studio.exe" --self-test
+ISCC /DAppVersion=0.1.0 packaging/windows/opticore-studio.iss
+```
+
+Releases are built by `.github/workflows/release.yml` from a version tag; see
+[GITHUB_SETUP.md](GITHUB_SETUP.md).

@@ -136,6 +136,7 @@ reload a lens with physically correct results (acceptance test below).
 | Large-project performance, code splitting | 🟡 (lazy Plotly/3D chunks; merit evaluation 7.6× faster via shared semi-diameters and warm-started chord-Newton ray aiming; 3D view renders on demand with BVH-accelerated CAD picking) |
 | Optional backend persistence and accounts | ⬜ |
 | Open-source release: AGPL-3.0-or-later licence, third-party notices, contribution terms, CI workflow; GitHub front page (README with gallery and validation summary, issue and PR templates, code of conduct, security policy, citation, changelog, Dependabot, social preview; `docs/GITHUB_SETUP.md`) (ADR-057) | 🟡 (prepared; the public repository is not yet created, and the CI workflow has not yet run on GitHub) |
+| Installable packages (ADR-058): one-click Windows installer, Linux AppImage, desktop program in an app window that ends with its last window, release workflow with self-tests and SHA-256 sums, Windows signing through SignPath Foundation | 🟡 (built and tested here; Windows signing waits for SignPath approval; no macOS package; the Linux package could be smaller) |
 
 ## Next: engineering plan
 

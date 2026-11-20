@@ -11,6 +11,8 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Juusseli/opticore-studio/actions/workflows/ci.yml"><img src="https://github.com/Juusseli/opticore-studio/actions/workflows/ci.yml/badge.svg" alt="Tests"></a>
+  <a href="https://github.com/Juusseli/opticore-studio/releases/latest"><img src="https://img.shields.io/github/v/release/Juusseli/opticore-studio?label=download&color=2a78d6" alt="Latest release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-2a78d6" alt="License: AGPL-3.0-or-later"></a>
   <img src="https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+">
   <img src="https://img.shields.io/badge/node-20%2B-339933?logo=node.js&amp;logoColor=white" alt="Node.js 20+">
@@ -19,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="#quick-start">Quick start</a> ·
+  <a href="#download">Download</a> ·
   <a href="#gallery">Gallery</a> ·
   <a href="#features">Features</a> ·
   <a href="#validated-against-published-work">Validation</a> ·
@@ -62,10 +64,26 @@
   - a layout that works from a 1366 px laptop to a 4K monitor;
   - English user interface, with Finnish available.
 
-## Quick start
+## Download
 
-You need **Python ≥ 3.11** and **Node.js ≥ 20**, plus about 1 GB of disk space
-for the engine's environment (NumPy, SciPy and the OpenCascade CAD kernel).
+| System | Package |
+|---|---|
+| **Windows** 10 and 11, 64-bit | **[OptiCore-Studio-Setup.exe](https://github.com/Juusseli/opticore-studio/releases/latest)**: run it, and the program opens when it is installed. No administrator rights are needed, and nothing else to install. |
+| **Linux**, x86-64 (glibc 2.35 or newer) | **[OptiCore-Studio-x86_64.AppImage](https://github.com/Juusseli/opticore-studio/releases/latest)**: make it executable (`chmod +x`) and run it. |
+
+The program opens in its own window (Microsoft Edge or Chrome in app mode, or your
+default browser) and works offline. Your projects are kept on your computer; use
+*Export* for `.opticore` backup files. Uninstall it from *Settings → Apps* on
+Windows, or delete the AppImage on Linux. On macOS, run it from source (below).
+
+Every release lists the SHA-256 sums of its files. The Windows files are signed as
+described in the [code signing policy](docs/CODE_SIGNING.md).
+
+## Run from source
+
+For development, or on macOS. You need **Python ≥ 3.11** and **Node.js ≥ 20**,
+plus about 1 GB of disk space for the engine's environment (NumPy, SciPy and the
+OpenCascade CAD kernel).
 
 **Windows:** double-click **`Start OptiCore.bat`**. It installs everything on the
 first start, which takes a few minutes. It then starts the engine and the user
@@ -95,6 +113,10 @@ npm run dev
 
 Open <http://localhost:5173>. The dev server proxies `/api` to the engine on port
 8000, or to `OPTICORE_ENGINE_URL` when that is set.
+
+To run the program as the packages do (one process, in an app window), build the user
+interface once (`npm run build` in `frontend`) and run
+`.venv/bin/python -m opticore.desktop` in `backend`.
 
 If port 8000 is taken, `Start OptiCore.bat` and `scripts\dev.ps1` move the engine
 to the first free port from 8010. The start stops if port 5173 is taken, which

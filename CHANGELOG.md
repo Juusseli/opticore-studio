@@ -8,6 +8,12 @@ Notable changes to OptiCore Studio. The format follows
 ## [Unreleased]
 
 ### Added
+- Installable packages: a one-click Windows installer and a Linux AppImage
+  (ADR-058). The desktop program runs the engine and the user interface as one
+  process in an app window, and works offline.
+- Release workflow: a version tag builds and tests the packages and drafts a
+  release with SHA-256 sums. Windows files are signed through SignPath
+  Foundation once it is configured (`docs/CODE_SIGNING.md`).
 - GitHub front page: a README with a gallery and validation summary, issue and
   pull request templates, a code of conduct, a security policy, citation
   metadata, Dependabot and a social preview image.

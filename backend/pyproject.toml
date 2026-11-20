@@ -18,6 +18,12 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "httpx>=0.27"]
+# building the installable packages (packaging/)
+package = ["pyinstaller>=6.16"]
+
+[project.scripts]
+# the desktop program: the engine with the built user interface in an app window (opticore/desktop.py)
+opticore-studio = "opticore.desktop:main"
 
 [build-system]
 requires = ["setuptools>=77"]

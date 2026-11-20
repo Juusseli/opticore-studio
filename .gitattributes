@@ -1,0 +1,4 @@
+# Linux scripts and desktop files keep LF line endings in every checkout (packaging/linux runs in Linux)
+*.sh text eol=lf
+packaging/linux/AppRun text eol=lf
+*.desktop text eol=lf

@@ -1,0 +1,241 @@
+name: release
+
+# The installable packages: a Windows installer and a Linux AppImage.
+#
+# * A version tag (v0.1.0, matching backend/opticore/__init__.py) builds both, tests the packaged program, and
+#   creates a draft GitHub release with the files and their SHA-256 sums. Review the draft, then publish it.
+# * Running the workflow by hand builds the packages as workflow artifacts only.
+# * Windows files are signed through SignPath (docs/CODE_SIGNING.md) when the repository variable
+#   SIGNPATH_ORGANIZATION_ID and the secret SIGNPATH_API_TOKEN are set; otherwise they are built unsigned.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  SIGNPATH_PROJECT: opticore-studio
+  SIGNPATH_POLICY: release-signing
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: v
+        name: Version (and the tag must match it)
+        run: |
+          version=$(sed -n 's/^__version__ = "\(.*\)"/\1/p' backend/opticore/__init__.py)
+          if [[ "$GITHUB_REF" == refs/tags/v* && "${GITHUB_REF#refs/tags/v}" != "$version" ]]; then
+            echo "Tag ${GITHUB_REF#refs/tags/} does not match the engine version $version"; exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+        working-directory: frontend
+      - run: npm run build
+        working-directory: frontend
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ui
+          path: frontend/dist
+
+  windows:
+    needs: [version, ui]
+    runs-on: windows-latest
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+      SIGN: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui
+          path: frontend/dist
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install the engine, PyInstaller and the UI packages (for their licences)
+        run: |
+          python -m pip install ./backend "pyinstaller>=6.16"
+          cd frontend; npm ci --ignore-scripts
+      - name: Licences
+        run: python packaging/collect_licenses.py
+      - name: Program folder (PyInstaller)
+        run: python -m PyInstaller packaging/opticore-studio.spec --noconfirm --distpath packaging/dist --workpath packaging/build/pyinstaller
+      - name: Self-test of the program
+        shell: pwsh
+        run: |
+          $p = Start-Process "packaging\dist\OptiCore Studio\OptiCore Studio.exe" -ArgumentList '--self-test' -Wait -PassThru
+          Get-Content "$env:LOCALAPPDATA\OptiCore Studio\opticore.log" | Select-String 'self-test'
+          if ($p.ExitCode -ne 0) { exit 1 }
+
+      - name: Upload the program for signing
+        if: env.SIGN == 'true'
+        id: program
+        uses: actions/upload-artifact@v4
+        with:
+          name: program-unsigned
+          path: packaging/dist/OptiCore Studio
+      - name: Sign the program (SignPath)
+        if: env.SIGN == 'true'
+        uses: signpath/github-action-submit-signing-request@v1
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: ${{ env.SIGNPATH_PROJECT }}
+          signing-policy-slug: ${{ env.SIGNPATH_POLICY }}
+          artifact-configuration-slug: program
+          github-artifact-id: ${{ steps.program.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: packaging/build/signed-program
+      - name: Use the signed program
+        if: env.SIGN == 'true'
+        shell: pwsh
+        run: |
+          Remove-Item -Recurse -Force "packaging\dist\OptiCore Studio"
+          Move-Item packaging\build\signed-program "packaging\dist\OptiCore Studio"
+
+      - name: Installer (Inno Setup)
+        shell: pwsh
+        run: |
+          choco install innosetup -y --no-progress
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" /Q "/DAppVersion=$env:VERSION" packaging\windows\opticore-studio.iss
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+      - name: Upload the installer for signing
+        if: env.SIGN == 'true'
+        id: installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: installer-unsigned
+          path: packaging/dist/OptiCore-Studio-${{ env.VERSION }}-Setup.exe
+      - name: Sign the installer (SignPath)
+        if: env.SIGN == 'true'
+        uses: signpath/github-action-submit-signing-request@v1
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: ${{ env.SIGNPATH_PROJECT }}
+          signing-policy-slug: ${{ env.SIGNPATH_POLICY }}
+          artifact-configuration-slug: installer
+          github-artifact-id: ${{ steps.installer.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: packaging/dist/signed
+      - name: Use the signed installer
+        if: env.SIGN == 'true'
+        shell: pwsh
+        run: Move-Item -Force "packaging\dist\signed\OptiCore-Studio-$env:VERSION-Setup.exe" "packaging\dist\OptiCore-Studio-$env:VERSION-Setup.exe"
+
+      - name: Install, self-test and uninstall
+        shell: pwsh
+        run: |
+          $dir = "$env:RUNNER_TEMP\opticore"
+          $p = Start-Process "packaging\dist\OptiCore-Studio-$env:VERSION-Setup.exe" -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART',"/DIR=`"$dir`"" -Wait -PassThru
+          if ($p.ExitCode -ne 0) { exit 1 }
+          $s = Start-Process "$dir\OptiCore Studio.exe" -ArgumentList '--self-test' -Wait -PassThru
+          if ($s.ExitCode -ne 0) { exit 1 }
+          $u = Start-Process "$dir\unins000.exe" -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART' -Wait -PassThru
+          if ($u.ExitCode -ne 0) { exit 1 }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: packaging/dist/OptiCore-Studio-${{ env.VERSION }}-Setup.exe
+
+  linux:
+    needs: [version, ui]
+    # the oldest supported runner: the AppImage runs on distributions with this glibc (2.35) or newer
+    runs-on: ubuntu-22.04
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui
+          path: frontend/dist
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: System libraries the CAD kernel loads
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libgl1 libegl1 libglu1-mesa libxrender1 libxext6 libsm6 libxt6 libfontconfig1 libfuse2
+      - name: Install the engine, PyInstaller and the UI packages (for their licences)
+        run: |
+          python -m pip install ./backend "pyinstaller>=6.16"
+          (cd frontend && npm ci --ignore-scripts)
+      - name: Licences
+        run: python packaging/collect_licenses.py
+      - name: Program folder (PyInstaller)
+        run: python -m PyInstaller packaging/opticore-studio.spec --noconfirm --distpath packaging/dist --workpath packaging/build/pyinstaller
+      - name: Self-test of the program
+        run: packaging/dist/opticore-studio/opticore-studio --self-test
+      - name: AppImage
+        run: |
+          curl -sSL -o "$RUNNER_TEMP/appimagetool" https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x "$RUNNER_TEMP/appimagetool"
+          APPIMAGETOOL="$RUNNER_TEMP/appimagetool" bash packaging/linux/build_appimage.sh "$VERSION"
+      - name: Self-test of the AppImage
+        run: |
+          chmod +x "packaging/dist/OptiCore-Studio-$VERSION-x86_64.AppImage"
+          "packaging/dist/OptiCore-Studio-$VERSION-x86_64.AppImage" --self-test
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-appimage
+          path: packaging/dist/OptiCore-Studio-${{ env.VERSION }}-x86_64.AppImage
+
+  release:
+    needs: [version, windows, linux]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: '{windows-installer,linux-appimage}'
+          path: out
+          merge-multiple: true
+      - name: Draft release
+        run: |
+          cd out
+          sha256sum * > SHA256SUMS.txt
+          cat > notes.md <<EOF
+          ## Download
+
+          | System | File |
+          |---|---|
+          | Windows 10 and 11 (64-bit) | \`OptiCore-Studio-$VERSION-Setup.exe\`: run it, and the program opens when it is installed. No administrator rights needed. |
+          | Linux (x86-64, glibc 2.35 or newer) | \`OptiCore-Studio-$VERSION-x86_64.AppImage\`: make it executable (\`chmod +x\`) and run it. |
+
+          The program opens in its own window (Microsoft Edge or Chrome in app mode, or the default browser) and works
+          offline. Projects are kept in that browser profile; export \`.opticore\` files for backups.
+
+          \`SHA256SUMS.txt\` lists the checksums of the files. Changes: [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGELOG.md).
+          EOF
+          gh release create "${{ github.ref_name }}" --draft --title "OptiCore Studio $VERSION" --notes-file notes.md \
+            "OptiCore-Studio-$VERSION-Setup.exe" "OptiCore-Studio-$VERSION-x86_64.AppImage" SHA256SUMS.txt

@@ -41,6 +41,19 @@ Data generated here from these sources (`builtin_coatings.json`,
 The development dependencies (pytest, httpx, Vite, Vitest, TypeScript, oxlint and
 their dependencies) are used only for building and testing.
 
+## The installable packages
+
+The Windows installer and the Linux AppImage contain the Python runtime, the
+Python dependencies above (with their own dependencies), and the user interface
+built from the npm packages above. Each package has a `licenses` folder. It holds
+the licence text of every bundled component and an index, `licenses/README.txt`,
+collected by `packaging/collect_licenses.py`.
+
+The program is built with PyInstaller. Its bootloader is under GPL-2.0 with an
+exception that allows distribution with any program. Open CASCADE Technology
+(LGPL-2.1 with the OCCT exception) is shipped as separate shared libraries, which
+can be replaced. The Windows installer is made with Inno Setup.
+
 ## Trademarks
 
 SCHOTT, CDGM, OHARA, HOYA, Zemax, OpticStudio, CODE V and other product and

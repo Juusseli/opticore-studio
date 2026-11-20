@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=OptiCore Studio
+GenericName=Optical design
+Comment=Optical design and simulation
+Exec=opticore-studio
+Icon=opticore-studio
+Terminal=false
+Categories=Science;Engineering;Physics;
+Keywords=optics;lens;ray tracing;thin film;

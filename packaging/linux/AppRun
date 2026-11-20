@@ -1,0 +1,4 @@
+#!/bin/sh
+# Entry point of the OptiCore Studio AppImage: start the program inside the image.
+HERE="$(dirname "$(readlink -f "$0")")"
+exec "$HERE/usr/lib/opticore-studio/opticore-studio" "$@"
