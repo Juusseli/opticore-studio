@@ -122,7 +122,10 @@ def test_candidate_is_reproducible_and_its_metrics_equal_the_normal_analyses():
     assert a["status"] == "finished" and a["feasible"], a.get("violations")
     assert a["metrics"] == b["metrics"] and a["system"] == b["system"]
     system = OpticalSystem.model_validate(a["system"])
-    assert metrics(system, [], spec) == pytest.approx(a["metrics"], rel=1e-12)
+    again = metrics(system, [], spec)
+    assert again.keys() == a["metrics"].keys()
+    for key, value in a["metrics"].items():  # one key at a time: pytest.approx does not compare nested values
+        assert again[key] == (pytest.approx(value, rel=1e-12) if isinstance(value, (int, float, list)) and not isinstance(value, bool) else value), key
     m = a["metrics"]
     body = {"system": a["system"], "custom_materials": []}
     spot = client.post("/api/v1/analysis/spot", json=body).json()

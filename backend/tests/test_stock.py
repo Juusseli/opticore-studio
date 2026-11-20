@@ -100,7 +100,9 @@ def test_generic_library_is_reproduced_by_its_generator():
     for crown, flint, f, D in (("N-BAF10", "N-SF6", 100.0, 25.4), ("N-BK7", "SF2", 500.0, 50.8)):
         a = generic_achromat(crown, flint, f, D, LIB)
         b = stored[a.part]
-        assert a.radii == pytest.approx(b.radii, rel=1e-9) and a.thicknesses == pytest.approx(b.thicknesses, rel=1e-12)
+        # the radii come from a least-squares solve converged to SciPy's default tolerances (relative 1e-8); another
+        # platform's floating-point arithmetic (BLAS, libm) moves the converged radii within that
+        assert a.radii == pytest.approx(b.radii, rel=1e-7) and a.thicknesses == pytest.approx(b.thicknesses, rel=1e-12)
 
 
 def test_generic_achromats_do_not_depend_on_the_process_pool(monkeypatch):
