@@ -23,7 +23,7 @@
     "postprocessing": "^6.39.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "three": "^0.187.0",
+    "three": "^0.186.1",
     "zustand": "^5.1.0"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "@types/plotly.js-dist-min": "^2.3.4",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
-    "@types/three": "^0.187.0",
+    "@types/three": "^0.186.0",
     "@vitejs/plugin-react": "^6.3.0",
     "jsdom": "^31.0.1",
     "oxlint": "^1.94.0",
