@@ -13,15 +13,15 @@ Python runtime, NumPy, SciPy, Open CASCADE and others, listed in the package's
 `licenses` folder) are their authors' files and are not signed by this project.
 
 Each release's files and their SHA-256 sums are published on the
-[releases page](https://github.com/Juusseli/opticore-studio/releases).
+[releases page](https://github.com/OnemanHobbystudio/opticore-studio/releases).
 
 ## Team roles
 
 | Role | Members |
 |---|---|
-| Authors (commit to the repository) | [Juuso Heiskanen](https://github.com/Juusseli) |
-| Reviewers (review contributions before they are merged) | [Juuso Heiskanen](https://github.com/Juusseli) |
-| Approvers (approve each signing request) | [Juuso Heiskanen](https://github.com/Juusseli) |
+| Authors (commit to the repository) | [Juuso Heiskanen](https://github.com/OnemanHobbystudio) |
+| Reviewers (review contributions before they are merged) | [Juuso Heiskanen](https://github.com/OnemanHobbystudio) |
+| Approvers (approve each signing request) | [Juuso Heiskanen](https://github.com/OnemanHobbystudio) |
 
 Contributions from outside the team, including automated dependency updates, are
 merged only through pull requests that a reviewer has checked. Every signing
